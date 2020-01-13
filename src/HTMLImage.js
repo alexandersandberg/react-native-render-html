@@ -103,6 +103,10 @@ export default class HTMLImage extends PureComponent {
     }
 
     validImage (source, style, props = {}) {
+        if (isNaN(this.state.width) || isNaN(this.state.height)) {
+            return null;
+        }
+
         return (
             <Image
               source={source}
